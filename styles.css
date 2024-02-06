@@ -1,0 +1,146 @@
+:root{
+    --maincolor:#1f3c3d;
+    --subcolor:#e0c3c2;
+    --contrast: #3d1f1e;
+    --heading-font:18pt;
+    --lead-font: 14pt;
+    --hightlight-font: 11pt;
+    --mainborder-radius: 10pt;
+    --subborder-radius: 5pt;
+}
+html{
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    min-height: 100%;
+    background-color: var(--subcolor);
+    margin:0;
+    padding: 0 13%;
+    padding-top: 3%;
+    position: relative;
+}
+header{
+    display: flex;
+    gap:3rem;
+    align-items: center;
+    z-index: 1000;
+}
+header > ul{
+    list-style: none;
+    display: flex;
+    gap:13px;
+    text-transform: uppercase;
+    color: var(--maincolor);
+    font-size: var(--hightlight-font);
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
+header>ul>li{
+    transition: .2s ease;
+    cursor: pointer;
+}
+header > ul > li:hover{
+    color: var(--contrast);
+}
+.Product{
+    transform: rotateY(180deg) rotate(17deg);
+    z-index: -100;
+}
+main{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap-reverse;
+}
+.CTA{
+    display: grid;
+    gap:10px;
+    width: 300px;
+    justify-self: center;
+}
+.CTA h2{
+    margin: 0;
+    color: var(--maincolor);
+    font-size: var(--heading-font);
+}
+.CTA h2:first-child{
+    color:var(--contrast)
+}
+.CTA p{
+    font-size: var(--hightlight-font);
+    max-width: 300px;
+    line-height: 1.5rem;
+    margin: .3rem 0;
+    color: var(--contrast);
+}
+.CTA > .btn-grp{
+    display: flex;
+    gap: 10px;
+}
+.btn-grp > button{
+    border-radius: var(--mainborder-radius);
+    color:white;
+    background-color: var(--maincolor);
+    padding: .75rem 1.2rem;
+    border: none;
+    transition: .2s linear;
+    font-family: 'Poppins', sans-serif;
+    font-size: var(--hightlight-font);
+}
+.btn-grp>button:last-child{
+    background-color: var(--contrast);
+}
+.btn-grp>button:focus{
+    background-color: transparent;
+    outline: 3px solid var(--maincolor);
+    color:var(--maincolor);
+    font-weight: 600;
+}
+.btn-grp>button:last-child:focus{
+    outline-color: var(--contrast);
+    color:var(--contrast)
+}
+span{
+    position: absolute;
+}
+.circle1,.circle2,.circle3{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    background-color: var(--maincolor);
+    position: absolute;
+}
+.circle1{
+    top: calc(100% + 20px);
+    left: -40px
+}
+.circle2{
+    background-color: white;
+    top: -40px;
+    left: -40px
+}
+.circle3 {
+    background-color: var(--contrast);
+    top: -40px;
+    right: -40px;
+}
+@media screen and (max-width:980px) {
+    .Product{
+        width: 300px;
+    }
+    main{
+        justify-content: space-evenly;
+    }
+    .circle3,.circle1,.circle2{
+        display: none;
+    }
+}
+@media screen and (max-width:500px) {
+    body{
+        padding: 3% 7%;
+    }
+    header{
+        gap:2rem;
+    }
+}
